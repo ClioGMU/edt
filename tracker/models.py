@@ -8,9 +8,13 @@ class Museum(models.Model):
     city = models.CharField(max_length=100)
     state = models.CharField(max_length=2)
 
+    def __str__(self): return self.institution
+
 class SensorType(models.Model):
     type = models.CharField(max_length=150)
     model = models.CharField(max_length=150)
+
+    def __str__(self): return self.type + " " + self.model
 
 class Sensor(models.Model):
     name = models.CharField(max_length=100, null=True, blank=True)
@@ -27,9 +31,13 @@ class Sensor(models.Model):
         on_delete=models.CASCADE,
     )
 
+    def __str__(self): return self.name
+
 class Location(models.Model):
     museum = models.ForeignKey(
         'Museum',
         on_delete=models.CASCADE,
     )
     room = models.CharField(max_length=150) 
+
+    def __str__(self): return self.room
