@@ -1,0 +1,16 @@
+<html> 
+    <head>
+        <meta charset="utf-8">
+        <title>{% block title %}Environmental Data Tracker{% endblock title %}</title>
+    </head>
+    <body>
+        <header>
+            <h2>Environmental Data Tracker</h2>
+            <a href="{% url 'home' %}">Home</a> | <a href="{% url 'about' %}">About</a>
+        </header>
+        <main>
+            {% block content %} 
+            {% endblock content %}
+        </main>
+    </body>
+</html>
