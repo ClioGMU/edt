@@ -1,0 +1,68 @@
+- model: users.customuser
+  pk: 1
+  fields:
+    password: pbkdf2_sha256$150000$3N8BoDDQdmLF$TBMSyn3lQ1beMCEZnSl72/CzVubmLWZATrSUxY43DtM=
+    last_login: 2019-11-04 19:07:00.720090+00:00
+    is_superuser: true
+    username: greta
+    first_name: ''
+    last_name: ''
+    email: gswain2@gmu.edu
+    is_staff: true
+    is_active: true
+    date_joined: 2019-10-29 18:47:53.772001+00:00
+    role: Developer
+    institution: 1
+    groups: []
+    user_permissions: []
+- model: users.customuser
+  pk: 2
+  fields:
+    password: pbkdf2_sha256$150000$RFev2jrLZVlT$OxX9JB8f8xKGiNKzLu0lTanzpWwD1GlDrP4/RqdQc4w=
+    last_login: 2019-11-08 14:30:56.838420+00:00
+    is_superuser: false
+    username: testuser1
+    first_name: Jane
+    last_name: Doe
+    email: janedoe@yahoo.com
+    is_staff: false
+    is_active: true
+    date_joined: 2019-11-04 18:42:56+00:00
+    role: Educator
+    institution: 3
+    groups: []
+    user_permissions: []
+- model: users.customuser
+  pk: 3
+  fields:
+    password: pbkdf2_sha256$150000$afZMwrF5Idp2$5sVRnEQOleXjgjSVDrrnzEqHzAXACT9M1ogvmR2vlvc=
+    last_login: 2019-11-08 14:31:25.398432+00:00
+    is_superuser: false
+    username: bob
+    first_name: Bob
+    last_name: Smith
+    email: bob@smith.com
+    is_staff: false
+    is_active: true
+    date_joined: 2019-11-04 18:47:01+00:00
+    role: Collections Manager
+    institution: 2
+    groups: []
+    user_permissions: []
+- model: users.customuser
+  pk: 4
+  fields:
+    password: pbkdf2_sha256$150000$bGMAQWlpk5lr$Ufo0hmsKw+0oSaJD7Y2cMCGo1LgpTnbaeEoRBDW/R50=
+    last_login: 2019-11-08 14:22:46.646962+00:00
+    is_superuser: true
+    username: corinne
+    first_name: ''
+    last_name: ''
+    email: cwilkin8@gmu.edu
+    is_staff: true
+    is_active: true
+    date_joined: 2019-11-08 14:20:08.677990+00:00
+    role: Developer
+    institution: 1
+    groups: []
+    user_permissions: []
