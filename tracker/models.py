@@ -22,10 +22,7 @@ class SensorType(models.Model):
 
 class Sensor(models.Model):
     name = models.CharField(max_length=100, null=True, blank=True, help_text="Please give your sensor a unique name to distinguish it from other sensors you may have")
-    location = models.ForeignKey(
-        'Location',
-        on_delete=models.CASCADE,
-    )
+    room = models.CharField(max_length=100, help_text="Please describe the location of your sensor")
     museum = models.ForeignKey(
         'Museum',
         on_delete=models.CASCADE,
@@ -36,12 +33,3 @@ class Sensor(models.Model):
     )
 
     def __str__(self): return self.name
-
-class Location(models.Model):
-    museum = models.ForeignKey(
-        'Museum',
-        on_delete=models.CASCADE,
-    )
-    room = models.CharField(max_length=150, help_text="Please describe the room in which the sensor is located") 
-
-    def __str__(self): return self.room
