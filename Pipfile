@@ -9,6 +9,7 @@ pyyaml = "*"
 
 [packages]
 django = "==2.2.*"
+django-crispy-forms = "==1.7.2"
 
 [requires]
 python_version = "3.7"
