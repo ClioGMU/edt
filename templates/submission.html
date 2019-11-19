@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{%load crispy_forms_tags %}
+
+{% block title %}Submission{% endblock title %}
+
+{% block content %}
+<p>Here is your submitted data</p> 
+<a href="{% url 'home' %}">Return to My Dashboard</a>
+
+{% endblock content %}
