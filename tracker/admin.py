@@ -4,10 +4,12 @@ from .models import Museum
 from .models import SensorType
 from .models import Sensor
 from .models import Location
-from .models import DataSubmission
+from .models import Submission
+from .models import DataPoint
 
 admin.site.register(Museum)
 admin.site.register(SensorType)
 admin.site.register(Sensor)
 admin.site.register(Location)
-admin.site.register(DataSubmission)
+admin.site.register(Submission)
+admin.site.register(DataPoint)
