@@ -4,8 +4,8 @@ from django.db import models
 from django.urls import reverse
 import os
 import uuid
-import csv
 from datetime import datetime
+from .parse import parse_datafile
 
 
 def uuid_filename(instance, filename):
@@ -60,7 +60,7 @@ class DataPoint(models.Model):
     humidity = models.DecimalField(max_digits=5, decimal_places=2)
 
     def __str__(self):
-        return self.pk
+        return str(self.pk)
 
 class Submission(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
@@ -71,7 +71,7 @@ class Submission(models.Model):
     )
     upload = models.FileField(upload_to="data-files/%Y/%m/%d/", null=True)
     
-    def __str__(self): return self.id
+    def __str__(self): return self.id.__str__()
     
     def get_absolute_url(self):
         return reverse("submission_detail", args=[str(self.id)])
@@ -81,29 +81,13 @@ class Submission(models.Model):
         print("Now saving...")
         super().save(*args, **kwargs) # Save record of submission
 
-    # Parse the CSV
-        with open(self.upload) as csvfile:
-            reader = csv.DictReader(csvfile, delimiter=',')
-            for row in reader:
-                timestamp = datetime.strptime(row['Date / Time'], "%m/%d/%Y %H:%M:%S")
-                print(type(timestamp))
-                print(timestamp)
+        # Parse the Uploaded Data File
+        datapoints = parse_datafile(self.upload.path, self.sensor.sensortype.type)
 
-                temperature = float(row['Temperature C']) 
-                print(type(temperature))
-                print(temperature)
-            
-                humidity = float(row['Humidity'])
-                print(type(humidity))
-                print(humidity) 
-
-        # Save the data from CSV in the other table
-                DataPoint.objects.create(
-                    source=self, 
-                    timestamp = timestamp, 
-                    temperature = temperature, 
-                    humidity = humidity) 
-
-        
-      
-
+        # Save the data from data file to the other table
+        for point in datapoints:        
+            DataPoint.objects.create(
+                        source=self, 
+                        timestamp = point['timestamp'], 
+                        temperature = point['temperature'], 
+                        humidity = point['humidity'])        
