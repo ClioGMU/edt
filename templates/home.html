@@ -7,11 +7,9 @@
   Hi {{ user.username }}!
     <p>Welcome to your tracker dashboard.</p>
     <p></p>
-    <a href="{% url 'logout' %}">Log Out</a>
+    <a href="{% url 'submission_new' %}">+ Upload Data File</a> |
 {% else %}
     <p>Welcome to our site. This will be a short description of what the app does.</p>
-    <p>You are not currently logged in. Login or sign up.</p>
-    <a href="{% url 'login' %}">Log In</a> | 
-    <a href="{% url 'signup' %}">Sign Up</a>
+    <p>You are not currently logged in. <a href="{% url 'login' %}">Log In</a> or <a href="{% url 'signup' %}">Sign Up</a>.</p>
 {% endif %}
 {% endblock content %}

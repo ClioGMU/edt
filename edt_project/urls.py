@@ -27,8 +27,9 @@ urlpatterns = [
       name='home'),
     path('about/', TemplateView.as_view(template_name='about.html'),
       name='about'), 
+    path('', include('tracker.urls')),  
     path('submission/', TemplateView.as_view(template_name='submission.html'),
-      name='submission'),
+      name='submission'),   
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

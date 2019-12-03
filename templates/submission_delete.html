@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{%load crispy_forms_tags %}
+
+{% block title %}Delete Submission{% endblock title %}
+
+{% block content %}
+<form action="" method="post">{% csrf_token %}
+    <p>Are you sure you want to delete your submission from "{{ submission.timestamp }}"?</p>
+    <input type="submit" value="Confirm" /> </form>
+
+{% endblock content %}
