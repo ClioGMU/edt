@@ -8,6 +8,7 @@ pylint = "*"
 pyyaml = "*"
 
 [packages]
+pillow = "*"
 django = "==2.2.*"
 django-crispy-forms = "==1.7.2"
 gunicorn = "*"
