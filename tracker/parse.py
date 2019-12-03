@@ -14,12 +14,12 @@ def parse_pi_csv(filepath):
     with open(filepath) as csvfile:
         reader = csv.DictReader(csvfile, delimiter=',')
         for row in reader:
-            timestamp = datetime.strptime(row['Date / Time'], "%m/%d/%Y %H:%M:%S")
-            temperature = float(row['Temperature C']) 
-            humidity = float(row['Humidity'])
-            datapoint = {"timestamp": timestamp,
-                         "temperature": temperature,
-                         "humidity": humidity}
+            temperature = float(row['temperature']) 
+            humidity = float(row['humidity'])
+            timestamp = datetime.strptime(row['timestamp'], "%m/%d/%Y %H:%M:%S")            
+            datapoint = {"temperature": temperature,
+                         "humidity": humidity,
+                         "timestamp": timestamp}
             datapoints.append(datapoint)
 
     return datapoints
