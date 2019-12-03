@@ -1,0 +1,57 @@
+- model: tracker.museum
+  pk: 1
+  fields:
+    institution: RRCHNM
+    city: Fairfax
+    state: VA
+- model: tracker.museum
+  pk: 2
+  fields:
+    institution: Sample Historic Site
+    city: Vienna
+    state: VA
+- model: tracker.museum
+  pk: 3
+  fields:
+    institution: Sample Museum
+    city: Leesburg
+    state: VA
+- model: tracker.sensortype
+  pk: 1
+  fields:
+    type: Raspberry Pi 3
+    model: B
+- model: tracker.sensortype
+  pk: 2
+  fields:
+    type: VSC
+    model: '4'
+- model: tracker.sensor
+  pk: 1
+  fields:
+    name: My Cool Sensor
+    location: 1
+    museum: 1
+    sensortype: 1
+- model: tracker.sensor
+  pk: 2
+  fields:
+    name: Red Sensor 1
+    location: 3
+    museum: 3
+    sensortype: 2
+- model: tracker.location
+  pk: 1
+  fields:
+    museum: 1
+    room: GRA Space
+- model: tracker.location
+  pk: 2
+  fields:
+    museum: 2
+    room: Front Room
+- model: tracker.location
+  pk: 3
+  fields:
+    museum: 3
+    room: Library

@@ -5,10 +5,14 @@ verify_ssl = true
 
 [dev-packages]
 pylint = "*"
+pyyaml = "*"
 
 [packages]
-django = "==2.2.6"
 pillow = "*"
+django = "==2.2.*"
+django-crispy-forms = "==1.7.2"
+gunicorn = "*"
+django-localflavor = "*"
 
 [requires]
 python_version = "3.7"
