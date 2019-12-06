@@ -28,7 +28,7 @@ class SubmissionCreateView(LoginRequiredMixin, CreateView):
     login_url = 'login'  
 
     def form_valid(self, form):
-        form.instance.museum = self.request.user.institution
+        form.instance.institution = self.request.user.institution
         if form.is_valid():
             response = super().form_valid(form)
             form.instance = self.object
@@ -48,7 +48,7 @@ class SensorListView(LoginRequiredMixin, ListView):
     template_name = 'sensor_list.html'
     login_url = 'login'
     def get_queryset(self):
-        return Sensor.objects.all().filter(museum=self.request.user.institution)
+        return Sensor.objects.all().filter(institution=self.request.user.institution)
 
 class SensorDetailView(LoginRequiredMixin, DetailView):
     model = Sensor
@@ -62,7 +62,7 @@ class SensorCreateView(LoginRequiredMixin, CreateView):
     login_url = 'login'    
 
     def form_valid(self, form):
-        form.instance.museum = self.request.user.institution
+        form.instance.institution = self.request.user.institution
         if form.is_valid():
             response = super().form_valid(form)
             form.instance = self.object
