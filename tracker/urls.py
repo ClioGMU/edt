@@ -4,6 +4,11 @@ from .views import (
     SubmissionDetailView, 
     SubmissionCreateView,
     SubmissionDeleteView,
+    SensorListView, 
+    SensorDetailView, 
+    SensorCreateView,
+    SensorUpdateView,
+    SensorDeleteView,
 )
 
 urlpatterns = [
@@ -11,4 +16,9 @@ urlpatterns = [
     path('submission/<int:pk>/', SubmissionDetailView.as_view(), name='submission_detail'),
     path('submission/<int:pk>/delete/', SubmissionDeleteView.as_view(), name='submission_delete'),
     path('submission/list', SubmissionListView.as_view(), name='submission_list'),
+    path('sensor/new/', SensorCreateView.as_view(), name='sensor_new'),
+    path('sensor/<int:pk>/', SensorDetailView.as_view(), name='sensor_detail'),
+    path('sensor/<int:pk>/delete/', SensorDeleteView.as_view(), name='sensor_delete'),
+    path('sensor/<int:pk>/edit/', SensorUpdateView.as_view(), name='sensor_edit'),
+    path('sensor/list', SensorListView.as_view(), name='sensor_list'),
 ]

@@ -44,6 +44,9 @@ class Sensor(models.Model):
 
     def __str__(self): return self.name
 
+    def get_absolute_url(self):
+        return reverse('sensor_detail', args=[str(self.pk)])
+
 class DataPoint(models.Model):
     source = models.ForeignKey('Submission', on_delete=models.PROTECT)
     timestamp = models.DateTimeField(null=False, blank=False)

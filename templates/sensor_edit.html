@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{%load crispy_forms_tags %}
+
+{% block title %}Update Sensor{% endblock title %}
+
+{% block content %}
+<p><a href="{% url 'home' %}">Return to My Dashboard</a></p>
+
+<h2>Edit Sensor</h2> 
+<br>
+<form action="" method="post">{% csrf_token %}
+    {{ form.as_p }}
+<input type="submit" value="Update" /> </form>
+
+{% endblock content %}

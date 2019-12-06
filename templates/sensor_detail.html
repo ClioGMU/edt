@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{%load crispy_forms_tags %}
+
+{% block title %}Your Sensor{% endblock title %}
+
+{% block content %}
+<p>
+<a href="{% url 'home' %}">Return to My Dashboard</a> |
+<a href="{% url 'sensor_new' %}"> Add New Sensor</a> |
+<a href="{% url 'sensor_list' %}"> View All Sensors</a>
+
+<div class="sensor-entry">
+    <h3>{{ sensor.name }}</h3>
+    <p>
+    Room: {{ sensor.room }}<br>
+    Sensor Type: {{ sensor.sensortype }}<br>
+    <a href="{% url 'sensor_delete' sensor.pk %}">Delete Sensor</a> |
+    <a href="{% url 'sensor_edit' sensor.pk %}">Edit Sensor</a>
+    </p>
+</div>
+
+{% endblock content %}

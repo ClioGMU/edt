@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{%load crispy_forms_tags %}
+
+{% block title %}Delete Sensor{% endblock title %}
+
+{% block content %}
+<p><a href="{% url 'home' %}">Return to My Dashboard</a></p>
+
+<h2>Delete Sensor</h2> 
+<br>
+<form action="" method="post">{% csrf_token %}
+    <p>Are you sure you want to delete your "{{ sensor.sensortype }}" sensor called "{{ sensor.name }}"?</p>
+    <input type="submit" value="Confirm" /> </form>
+
+{% endblock content %}
