@@ -1,3 +1,16 @@
 {% extends 'base.html' %}
 
-{% block title %}Data Submission{% endblock title %}
+{%load crispy_forms_tags %}
+
+{% block title %}Your Submission{% endblock title %}
+
+{% block content %}
+<div class="submission-entry">
+    <h2>{{ submission.timestamp }}</h2>
+    <p>{{ submission.sensor }}</p> </div>
+    <p>{{ submission.upload }}</p> </div>
+
+<p><a href="{% url 'submission_delete' submission.pk %}">+ Delete Data Submission</a></p>
+
+
+{% endblock content %}

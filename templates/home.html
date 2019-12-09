@@ -4,14 +4,26 @@
 
 {% block content %}
 {% if user.is_authenticated %}
-  Hi {{ user.username }}!
-    <p>Welcome to your tracker dashboard.</p>
-    <p></p>
-    <a href="{% url 'logout' %}">Log Out</a>
+  <h2>Dashboard</h2>
+  <p>Hi {{ user.first_name }} from {{ user.institution }}. Welcome to your tracker dashboard!</p>
+  
+  <div>
+    <h4>Sensors</h4>
+    <ul>
+        <li><a href="{% url 'sensor_new' %}">Add New Sensor</a></li>
+        <li><a href="{% url 'sensor_list' %}">View All Sensors</a></li>
+      </ul>
+  </div><br>
+  <div>
+      <h4>Data Submissions</h4>
+      <ul>
+      <li><a href="{% url 'submission_new' %}">Upload New Data File</a></li>
+      <li><a href="{% url 'submission_list' %}">View All Data Submissions</a></li>
+    </ul>
+    </div>
+
 {% else %}
     <p>Welcome to our site. This will be a short description of what the app does.</p>
-    <p>You are not currently logged in. Login or sign up.</p>
-    <a href="{% url 'login' %}">Log In</a> | 
-    <a href="{% url 'signup' %}">Sign Up</a>
+    <p>You are not currently logged in. <a href="{% url 'login' %}">Log In</a> or <a href="{% url 'signup' %}">Sign Up</a>.</p>
 {% endif %}
 {% endblock content %}
