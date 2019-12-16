@@ -5,10 +5,11 @@
 {% block title %}New Data Submission{% endblock title %}
 
 {% block content %}
-<a href="{% url 'home' %}">Return to My Dashboard</a>
+<p><a href="{% url 'home' %}">Return to My Dashboard</a></p>
+
+<h2>Upload A New Data File</h2> 
 <br>
-<p>Upload your data file here:</p> 
-<form action="" method="post">{% csrf_token %}
+<form action="" method="post" enctype="multipart/form-data">{% csrf_token %}
     {{ form.as_p }}
 <input type="submit" value="Save" /> </form>
 

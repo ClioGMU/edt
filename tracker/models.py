@@ -50,7 +50,7 @@ class Sensor(models.Model):
         return reverse('sensor_detail', args=[str(self.pk)])
 
 class DataPoint(models.Model):
-    source = models.ForeignKey('Submission', on_delete=models.PROTECT)
+    source = models.ForeignKey('Submission', on_delete=models.CASCADE)
     timestamp = models.DateTimeField(null=False, blank=False)
     temperature = models.DecimalField(max_digits=5, decimal_places=2)
     humidity = models.DecimalField(max_digits=5, decimal_places=2)

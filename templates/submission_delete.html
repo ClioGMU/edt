@@ -5,8 +5,12 @@
 {% block title %}Delete Submission{% endblock title %}
 
 {% block content %}
+<p><a href="{% url 'home' %}">Return to My Dashboard</a></p>
+
+<h2>Delete Submission</h2> 
+<br>
 <form action="" method="post">{% csrf_token %}
-    <p>Are you sure you want to delete your submission from "{{ submission.timestamp }}"?</p>
+    <p>Are you sure you want to delete your {{ submission.timestamp }} submission from your {{ submission.sensor.sensortype }} sensor called "{{ submission.sensor.name }}"?</p>
     <input type="submit" value="Confirm" /> </form>
 
 {% endblock content %}

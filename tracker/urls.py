@@ -13,8 +13,8 @@ from .views import (
 
 urlpatterns = [
     path('submission/new/', SubmissionCreateView.as_view(), name='submission_new'),
-    path('submission/<int:pk>/', SubmissionDetailView.as_view(), name='submission_detail'),
-    path('submission/<int:pk>/delete/', SubmissionDeleteView.as_view(), name='submission_delete'),
+    path('submission/<uuid:pk>/', SubmissionDetailView.as_view(), name='submission_detail'),
+    path('submission/<uuid:pk>/delete/', SubmissionDeleteView.as_view(), name='submission_delete'),
     path('submission/list', SubmissionListView.as_view(), name='submission_list'),
     path('sensor/new/', SensorCreateView.as_view(), name='sensor_new'),
     path('sensor/<int:pk>/', SensorDetailView.as_view(), name='sensor_detail'),

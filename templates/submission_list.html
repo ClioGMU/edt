@@ -2,10 +2,24 @@
 
 {%load crispy_forms_tags %}
 
-{% block title %}Submission{% endblock title %}
+{% block title %}Data Submissions{% endblock title %}
 
 {% block content %}
-<p>Here is your submitted data</p> 
-<a href="{% url 'home' %}">Return to My Dashboard</a>
+<p>
+<a href="{% url 'home' %}">Return to My Dashboard</a> |
+<a href="{% url 'submission_new' %}"> Upload New Submission</a>
+</p>
+<h2>Data Submissions for {{ user.institution }} ({{ user.institution.submission_set.count}})</h2><br>
+
+{% for submission in object_list %}
+<h4>{{ submission.timestamp }} </h4>
+<p>
+    Sensor: {{ submission.sensor.name }} in {{ submission.sensor.room }}
+    <br>
+    Sensor Type: {{ submission.sensor.sensortype }}
+    <br>
+    <a href="{% url 'submission_delete' submission.pk %}">Delete Submission</a>
+</p>
+{% endfor %}
 
 {% endblock content %}

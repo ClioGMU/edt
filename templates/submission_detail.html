@@ -5,12 +5,25 @@
 {% block title %}Your Submission{% endblock title %}
 
 {% block content %}
-<div class="submission-entry">
-    <h2>{{ submission.timestamp }}</h2>
-    <p>{{ submission.sensor }}</p> </div>
-    <p>{{ submission.upload }}</p> </div>
+<p>
+    <a href="{% url 'home' %}">Return to My Dashboard</a> |
+    <a href="{% url 'submission_new' %}"> Upload New Data File</a> |
+    <a href="{% url 'submission_list' %}"> View All Submissions</a>
+</p>
 
-<p><a href="{% url 'submission_delete' submission.pk %}">+ Delete Data Submission</a></p>
+<h5>Your submission was uploaded sucessfully!</h5>
+
+<div class="submission-entry">
+    <p>
+    Submitted: {{ submission.timestamp }}
+    <br>    
+    Sensor: {{ submission.sensor.name }} in {{ submission.sensor.room }}
+    <br>
+    Sensor Type: {{ submission.sensor.sensortype }}
+    <br>
+    <a href="{% url 'submission_delete' submission.pk %}">Delete Submission</a>
+    </p>
+</div>
 
 
 {% endblock content %}
