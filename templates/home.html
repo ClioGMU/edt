@@ -31,8 +31,11 @@
 
 
 {% else %}
-<p>Welcome to our site. This will be a short description of what the app does.</p>
-<p>You are not currently logged in. <a href="{% url 'login' %}">Log In</a> or <a href="{% url 'signup' %}">Sign Up</a>.</p>
+<div class ="card-body-1">
+<p>Take control of your museum environment with the Environmental Data Tracker, a tool that allows institutions to upload, visualize, and analyze their temperature and humidity data. Improve how you monitor your collections for optimal preservation conditions.</p>
+</div>
+<p>Get started today!</p>
+<p><a href="{% url 'login' %}">Log In</a> or <a href="{% url 'signup' %}">Sign Up</a>.</p>
 {% endif %}
 {% endblock content %}
 
