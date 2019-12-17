@@ -22,9 +22,12 @@ def get_sense_data():
 with open('data.csv', 'w', newline='') as f:
     data_writer = writer(f)
 
-    data_writer.writerow(['temperature', 'humidity', 'datetime'])
+    data_writer.writerow(['temperature', 'humidity', 'timestamp'])
 
     while True:
         data = get_sense_data()
         data_writer.writerow(data)
         time.sleep(delay)
+
+
+##sample data written from this script that we collected from the GRA space is in pi-data.csv
