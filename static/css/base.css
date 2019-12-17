@@ -1,0 +1,51 @@
+
+body {
+  font-family: 'Merriweather Sans', sans-serif;
+  font-size: 18px;
+}
+
+.card-body {
+  float: left;
+  width: 33.33%;
+  height: 350px;
+  padding: 50px;
+  border: 2px #02558b;
+  border-style: solid;
+  background-color: #f5f5f5;
+}
+
+a:link {
+  color: #88bbd6;
+}
+/* unvisited link */
+a:link {
+  color: #88bbd6;
+}
+
+/* visited link */
+a:visited {
+  color: #88bbd6;
+}
+
+/* mouse over link */
+a:hover {
+  color: #88bbd6;
+}
+
+/* selected link */
+a:active {
+  color: #88bbd6;
+}
+
+.title {
+  text-align: center;
+}
+
+.main-title {
+  color: #02558b;
+}
+
+.btn-primary {
+  background-color: #02558b;
+  border: white;
+}
