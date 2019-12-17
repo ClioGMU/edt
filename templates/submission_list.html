@@ -9,7 +9,7 @@
 <a href="{% url 'home' %}">Return to My Dashboard</a> |
 <a href="{% url 'submission_new' %}"> Upload New Submission</a>
 </p>
-<h2>Data Submissions for {{ user.institution }} ({{ user.institution.submission_set.count}})</h2><br>
+<h2>Data Submissions</h2><br>
 
 {% for submission in object_list %}
 <h4>{{ submission.timestamp }} </h4>

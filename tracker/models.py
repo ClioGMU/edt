@@ -42,6 +42,7 @@ class Sensor(models.Model):
         'SensorType',
         null=False, blank=False,
         on_delete=models.CASCADE,
+        verbose_name="Sensor Type",
     )
 
     def __str__(self): return self.name
