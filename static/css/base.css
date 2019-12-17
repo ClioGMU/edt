@@ -14,15 +14,7 @@ body {
   background-color: #f5f5f5;
 }
 
-.card-body-1 {
-  float: center;
-  width: 100 px;
-  height: 350px;
-  padding: 50px;
-  border: 2px #02558b;
-  border-style: solid;
-  background-color: #f5f5f5;
-}
+
 
 a:link {
   color: #88bbd6;
