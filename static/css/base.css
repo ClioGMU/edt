@@ -14,7 +14,15 @@ body {
   background-color: #f5f5f5;
 }
 
+.img {
+  width:200px;
+  height:175px;
+}
 
+.image {
+  width:650px;
+  height:475px;
+}
 
 a:link {
   color: #88bbd6;
